@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    Intent intent = new Intent(MainActivity.this, MyService.class);
                     startService(intent);
                     Toast.makeText(MainActivity.this, "啟動Service", Toast.LENGTH_LONG).show();
                     finish();

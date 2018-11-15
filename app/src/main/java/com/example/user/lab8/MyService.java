@@ -5,14 +5,8 @@ import android.content.Intent;
 import android.os.IBinder;
 
 public class MyService extends Service {
-    public MyService() {
-    }
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        // TODO: Return the communication channel to the service.
-        return null;
-    }
+
 
     public void onCreate()
     {
@@ -21,7 +15,7 @@ public class MyService extends Service {
             public void run() {
                 try
                 {
-                    Thread.sleep(50000);
+                    Thread.sleep(5000);
 
                     Intent intent = new Intent(MyService.this, Main2Activity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
@@ -32,6 +26,11 @@ public class MyService extends Service {
                 }
             }
         }).start();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
     }
 
     @Override
